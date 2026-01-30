@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    alignment: right;
+}
+.top-nav .topnav-parent a.active {
+    font-family: sans-serif;
+    background-color: darkseagreen;
+    color: beige;
+    position: relative;
+    overflow: auto;
+
+}
