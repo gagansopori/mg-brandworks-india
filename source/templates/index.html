@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Fun With Flags: A Vexillological Drama
+MG Brandworks India | Home
 {% endblock %}
 
 {% block body %}
-<div class="top-nav">
-    <div class="topnav-parent" style="overflow: hidden; width: 100%; height: 44px">
-        <a class="topnav-item button" href="index.html" title="About Website" style="padding-left: 18px!important; padding-right: 18px!important;">About</a>
-        <a class="topnav-item button " href="index.html" title="Flags" style="padding-left: 18px!important; padding-right: 18px!important;">Flags</a>
+<div class="home-hero">
+    <div class="hero-bg-container">
+        <img src="{{ url_for('static', filename = 'images/founder.png') }}" alt="Founder" class="hero-bg-image">
+        <div class="tint-overlay"></div>
     </div>
 
+    <div class="hero-content">
+        <h1 class="brand-name">MG BRANDWORKS</h1>
+        <h3 class="tagline">Let's bring your brand to life.</h3>
+<!--        <div class="injected-text">-->
+<!--            {{ content|safe }}-->
+<!--        </div>-->
+    </div>
 </div>
 
+<footer class="site-footer">
+    <p>&copy; 2026 MG BRANDWORKS INDIA</p>
+</footer>
 {% endblock %}
