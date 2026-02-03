@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def load_markdown(filename):
     """Load and render markdown file to HTML"""
-    content_path = os.path.join(os.path.dirname(__file__), '..', 'content', f'{filename}.md')
+    content_path = os.path.join(os.path.dirname(__file__), 'static', 'content', f'{filename}.md')
     try:
         with open(content_path, 'r') as f:
             md_content = f.read()
