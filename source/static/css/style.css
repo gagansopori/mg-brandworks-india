@@ -53,6 +53,35 @@ nav li:hover a {
     color: #ffffff;
 }
 
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* This pushes logo left and links right */
+    align-items: center;
+    max-width: 1400px; /* Optional: keeps content from hitting screen edges on ultra-wide monitors */
+    margin: 0 auto;
+}
+
+/* Logo styling */
+.nav-logo img {
+    height: 40px; /* Adjust based on your logo design */
+    width: auto;
+    display: block;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+}
+
+.nav-links li {
+    border-radius: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
 /* =========================================
    3. FULL SCREEN HERO (Home Page)
    ========================================= */
@@ -113,10 +142,83 @@ nav li:hover a {
     text-transform: lowercase;      /* Keeps it in sentence case for contrast */
 }
 
+/* Container for the buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    gap: 20px;               /* Space between the two buttons */
+    margin-top: 30px;
+}
+
+/* Base button styles */
+.cta-button {
+    padding: 12px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    width: 180px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Left Button: Azure with Gray text */
+.cta-button:first-child {
+    background-color: #ffffff; /* white */
+    color: #5e5d5f;            /* Gray/Slate */
+}
+
+/* Left Button Hover & Click: Yellow with White text */
+.cta-button:first-child:hover,
+.cta-button:first-child:active {
+    background-color: #ffcc05; /* Yellow/Gold */
+    color: #ffffff;            /* White */
+}
+
+/* Right Button: Yellow with White text (Default) */
+.cta-button:last-child {
+    background-color: #37cae3; /* Yellow/Gold */
+    color: #5e5d5f;            /* White */
+}
+
+/* Right Button Hover & Click: Azure with Gray text */
+.cta-button:last-child:hover,
+.cta-button:last-child:active {
+    background-color: #ffcc05; /* Yellow/Gold */
+    color: #ffffff;            /* White */
+}
+
 /* =========================================
    4. MOBILE SPECIFIC VERSION
    ========================================= */
 @media (max-width: 768px) {
+.nav-container {
+        padding: 0 10px;
+    }
+
+    .nav-links {
+        display: none; /* Hidden until burger is clicked */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0; /* Align the dropdown to the right */
+        width: 200px; /* Smaller width for the mobile menu */
+        background-color: #37cae3;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    
     .brand-name {
         font-size: 2.2rem;
     }
@@ -128,6 +230,16 @@ nav li:hover a {
     .tagline {
         font-size: 0.9rem;     /* Even smaller on mobile */
         letter-spacing: 0.1em;
+    }
+
+    .hero-buttons {
+        flex-direction: row; /* Keeps them side by side on mobile */
+        gap: 10px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.8rem;
     }
 }
 

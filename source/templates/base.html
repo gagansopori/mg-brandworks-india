@@ -10,14 +10,27 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
-            <li><a href="{{ url_for('about') }}">Services</a></li>
-            <li><a href="{{ url_for('projects') }}">Blog</a></li>
-            <li><a href="{{ url_for('projects') }}">Socials</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='images/founder.png') }}" alt="MG Logo">
+                </a>
+            </div>
+
+            <div class="burger-menu" id="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('about') }}">Services</a></li>
+                <li><a href="{{ url_for('projects') }}">Blog</a></li>
+                <li><a href="{{ url_for('projects') }}">Socials</a></li>
+                <li><a href="{{ url_for('contact') }}">contact</a></li>
+            </ul>
+        </div>
     </nav>
     <main>
         {% block body %}{% endblock %}
