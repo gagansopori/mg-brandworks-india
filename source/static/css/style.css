@@ -63,8 +63,11 @@ nav li:hover a {
 
 /* Logo styling */
 .nav-logo img {
-    height: 40px; /* Adjust based on your logo design */
-    width: auto;
+    height: 50px;           /* Set a specific height */
+    width: 50px;            /* Width must match height for a perfect circle */
+    object-fit: cover;      /* Prevents the logo from stretching */
+    border-radius: 50%;     /* This creates the circle */
+    border: 2px solid #ffcc05; /* Optional: adds a slate border around the circle */
     display: block;
 }
 
@@ -80,6 +83,22 @@ nav li:hover a {
 .nav-links li {
     border-radius: 2px;
     transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.burger-menu {
+    display: none; /* Hide on Desktop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the menu */
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #5e5d5f; /* Slate color */
+    transition: all 0.3s ease;
+    display: block;
 }
 
 /* =========================================
@@ -200,25 +219,30 @@ nav li:hover a {
    ========================================= */
 @media (max-width: 768px) {
 .nav-container {
-        padding: 0 10px;
+    padding: 0 10px;
     }
 
     .nav-links {
-        display: none; /* Hidden until burger is clicked */
+        display: none; /* Hidden by default */
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        right: 0; /* Align the dropdown to the right */
-        width: 200px; /* Smaller width for the mobile menu */
+        top: 82px; /* Adjust based on your nav height */
+        left: 0;
+        width: 100%; /* Full width looks better on Pixel 7 */
         background-color: #37cae3;
         padding: 20px;
         z-index: 1000;
+        text-align: center;
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Shows when clicked */
     }
-    
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
     .brand-name {
         font-size: 2.2rem;
     }
@@ -240,6 +264,21 @@ nav li:hover a {
     .cta-button {
         padding: 10px 20px;
         font-size: 0.8rem;
+    }
+
+    .burger-menu {
+        display: flex; /* Show burger on mobile */
+    }
+
+    /* BURGER ANIMATION TO 'X' */
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 
