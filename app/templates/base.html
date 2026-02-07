@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="MG Brandworks India | Let's bring your brand to life." name="description">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="{{ url_for('home.index') }}">
+                <img alt="MG Logo" src="{{ url_for('static', filename='images/mgb_logo.jpeg') }}">
+            </a>
+        </div>
+        <!-- Burger Menu for Mobile -->
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="{{ url_for('home.index') }}">Home</a></li>
+            <li><a href="{{ url_for('about.index') }}">About</a></li>
+            <li><a href="{{ url_for('about.index') }}">Services</a></li>
+<!--            <li><a href="{{ url_for('projects.index') }}">Blog</a></li>-->
+<!--            <li><a href="{{ url_for('projects.index') }}">Socials</a></li>-->
+            <li><a href="{{ url_for('contact.index') }}">Contact</a></li>
+        </ul>
+        <script>
+            const burger = document.getElementById('burger-menu');
+            const navLinks = document.getElementById('nav-links');
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burger.classList.toggle('active'); // This triggers the animation
+                });
+        </script>
+    </div>
+</nav>
+<main>
+    {% block body %}{% endblock %}
+</main>
+</body>
+</html>

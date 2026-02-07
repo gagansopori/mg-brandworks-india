@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+Contact Me
+{% endblock %}
+{% block body %}
+<section class="contact-section">
+    <div class="hero-content">
+        <h1 class="brand-name">connect</h1>
+        <p class="tagline">Choose your preferred way to reach out.</p>
+    </div>
+
+    <div class="contact-grid">
+        <a class="contact-card" href="https://www.linkedin.com/in/yourprofile/" target="_blank">
+            <div class="icon">in</div>
+            <h3>LinkedIn</h3>
+            <p>Message me for professional inquiries.</p>
+        </a>
+
+        <a class="contact-card" href="https://www.instagram.com/direct/t/YOUR_USER_ID" target="_blank">
+            <div class="icon">ig</div>
+            <h3>Instagram</h3>
+            <p>Slide into the DMs for creative collabs.</p>
+        </a>
+
+        <a class="contact-card" href="mailto:hello@mgbrandworks.in?subject=Inquiry from Website">
+            <div class="icon">@</div>
+            <h3>Email</h3>
+            <p>Opens your default mail app.</p>
+        </a>
+    </div>
+</section>
+{{ content|safe }}
+{% endblock %}
