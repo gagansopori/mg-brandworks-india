@@ -1,14 +1,14 @@
 /* =========================================
    1. GLOBAL SETTINGS & FONTS
    ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Work Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 * { box-sizing: border-box; }
 
 body, html {
     margin: 0; padding: 0;
     background-color: #ffffff;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
 
@@ -38,9 +38,9 @@ nav li a {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     display: block;
-    padding: 8px 16px;
+    padding: 8px 10px;
     transition: color 0.3s ease;
 }
 
@@ -172,7 +172,7 @@ nav li:hover a {
 /* Base button styles */
 .cta-button {
     padding: 12px 28px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -293,4 +293,37 @@ nav li:hover a {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 0.7rem;
+}
+
+/*==========================================
+   6. CONTACT PAGE GRID
+   ==========================================*/
+   .contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: #1a1a1a; /* Dark background */
+    border: 1px solid #37cae3; /* Your Azure/Blue accent */
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(55, 202, 227, 0.3);
+}
+
+.icon {
+    font-size: 2rem;
+    color: #37cae3;
+    margin-bottom: 15px;
 }

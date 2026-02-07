@@ -4,7 +4,8 @@ Here are some of the projects I've worked on:
 
 ## Project 1: Portfolio Website
 
-A static portfolio website built with Flask, showcasing my skills and experience. Features a clean design with markdown-based content management.
+A static portfolio website built with Flask, showcasing my skills and experience. Features a clean design with
+markdown-based content management.
 
 **Technologies**: Flask, Jinja2, HTML/CSS
 
