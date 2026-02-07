@@ -10,18 +10,20 @@
 </head>
 <body>
     <nav>
+        <!-- Navigation Bar -->
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="{{ url_for('home') }}">
-                    <img src="{{ url_for('static', filename='images/founder.png') }}" alt="MG Logo">
+                    <img src="{{ url_for('static', filename='images/founder.jpg') }}" alt="MG Logo">
                 </a>
             </div>
-
+            <!-- Burger Menu for Mobile -->
             <div class="burger-menu" id="burger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+            <!-- Navigation Links -->
             <ul class="nav-links" id="nav-links">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
@@ -30,6 +32,14 @@
                 <li><a href="{{ url_for('projects') }}">Socials</a></li>
                 <li><a href="{{ url_for('contact') }}">contact</a></li>
             </ul>
+            <script>
+                    const burger = document.getElementById('burger-menu');
+                    const navLinks = document.getElementById('nav-links');
+                    burger.addEventListener('click', () => {
+                        navLinks.classList.toggle('active');
+                        burger.classList.toggle('active'); // This triggers the animation
+                        });
+            </script>
         </div>
     </nav>
     <main>
