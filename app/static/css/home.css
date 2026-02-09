@@ -1,0 +1,76 @@
+.home-hero {
+    position: relative;
+    width: 100%; height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.hero-bg-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.hero-bg-image { width: 100%; height: 100%; object-fit: cover; }
+
+.tint-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 10%;
+}
+
+.brand-name { font-size: 3.5rem; font-weight: 300; letter-spacing: 0.2em; }
+
+.tagline {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    margin-top: 10px;
+    text-transform: lowercase;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* BUTTON MODIFIERS */
+.cta-button {
+    transition: all 0.3s ease !important; /* Forces the animation to trigger */
+}
+.btn-home-white {
+    background-color: #ffffff;
+    color: #5e5d5f;
+}
+.btn-home-white:hover {
+    background-color: #ffcc05;
+    color: #ffffff;
+    transform: translateY(-3px);
+   }
+
+   .btn-home-white:active { transform: translateY(-1px);}
+
+.btn-home-azure { background-color: #37cae3; color: #5e5d5f; }
+.btn-home-azure:hover { background-color: #ffcc05; color: #ffffff; transform: translateY(-3px);}
+.btn-home-azure:active { transform: translateY(-1px);}
+
+@media (max-width: 768px) {
+    .brand-name { font-size: 2.2rem; }
+    .tagline { font-size: 0.9rem; }
+    .hero-buttons { flex-direction: row; gap: 10px; }
+    .cta-button { width: 150px; font-size: 0.8rem; }
+}

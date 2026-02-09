@@ -1,0 +1,94 @@
+.contact-page-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                url('/static/images/contact-bg.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+}
+
+.contact-split-layout {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+    padding: 0 50px;
+}
+
+.contact-info-panel { flex: 1.2; text-align: left; color: #708090; max-width: 500px; }
+
+.contact-info-panel .brand-name {
+    color: #ffffff;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+}
+
+.contact-form-panel {
+    flex: 1;
+    background-color: #37cae3;
+    padding: 80px 50px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    padding: 2px;
+}
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #18adc7;
+    color: #5e5d5f;
+    border: 1.5px solid #5e5d5f;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    background-color: rgba(255, 255, 255, 0.1); /* Very subtle shift on focus */
+    border-color: #ffffff; /* Turns white on focus for accessibility */
+}
+
+/* Update placeholder color to be visible on Azure */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(94, 93, 95, 0.8); /* Slate with 70% opacity */
+}
+
+/* SUBMIT BUTTON */
+.btn-contact-gold {
+    background-color: #ffcc05;
+    color: #ffffff;
+    margin: 30px auto 0 auto;
+    display: flex;
+}
+.btn-contact-gold:hover { background-color: #5e5d5f; transform: translateY(-3px); transform: translateY(-3px);}
+.btn-contact-gold:active { transform: translateY(-1px); }
+.mini-contact-grid { display: flex; gap: 25px; margin-top: 30px; }
+.mini-contact-grid a { font-size: 2rem; color: #708090; transition: all 0.3s ease; }
+.mini-contact-grid a:hover .fa-linkedin { color: #0077b5; }
+.mini-contact-grid a:hover .fa-instagram { color: #e4405f; }
+.mini-contact-grid a:hover .fa-youtube { color: #ff0000; }
+
+@media (max-width: 768px) {
+    .contact-split-layout { flex-direction: column; gap: 40px; text-align: center; }
+    .contact-form-panel { width: 100%; max-width: 500px; }
+    contact-info-panel { text-align: center; }
+}
+@media (max-width: 1024px) {
+    .contact-split-layout { gap: 50px; padding: 0 20px; }
+}
