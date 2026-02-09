@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+* { box-sizing: border-box; }
+
+body, html {
+    margin: 0; padding: 0;
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #37cae3;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-logo img {
+    height: 50px; width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ffcc05; /* Preserved from original */
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0; padding: 0;
+    gap: 15px;
+}
+
+.nav-links li {
+    border-radius: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #5e5d5f; /* Original Slate */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    display: block;
+    padding: 8px 10px;
+}
+
+.nav-links li:hover {
+    background-color: #ffcc05; /* Gold */
+    transform: translateY(-3px);
+}
+
+.nav-links li:hover a { color: #ffffff; }
+
+/* SHARED BUTTON BASE */
+.cta-button {
+    padding: 12px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 180px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+/* FOOTER */
+.site-footer {
+    padding: 1rem;
+    text-align: center;
+    background: #ffffff;
+    color: #5e5d5f;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+}
+
+/* GLOBAL MOBILE STRUCTURE */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    .burger-menu span {
+        width: 25px; height: 3px;
+        background-color: #5e5d5f;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 82px; left: 0; width: 100%;
+        background-color: #37cae3;
+        padding: 20px;
+        text-align: center;
+    }
+    .nav-links.active { display: flex; }
+    /* Burger Animation */
+    .burger-menu.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .burger-menu.active span:nth-child(2) { opacity: 0; }
+    .burger-menu.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
