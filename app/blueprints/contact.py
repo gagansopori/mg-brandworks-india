@@ -20,7 +20,7 @@ def index():
         mail.send(msg)
         flash('Message Sent!', 'success')
         return redirect(url_for('contact.index'))
-    return render_template('contact.html', form=form)
+    return render_template('contact.html')
 
 
 class ContactForm(FlaskForm):
