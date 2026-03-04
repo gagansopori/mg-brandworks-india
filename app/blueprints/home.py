@@ -4,8 +4,8 @@ home_bp = Blueprint('home', __name__)
 
 @home_bp.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @home_bp.route('/home')
 def index_redirect():
-    return render_template('index.html')
+    return render_template('home.html')
