@@ -1,12 +1,6 @@
+import logging
 from flask import Blueprint, render_template, redirect, url_for, flash, request
-from flask_mail import Message
-# Import your ContactForm class here
-from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField
-from wtforms.validators import DataRequired, Email
-
 from app.email_service import EmailService
-from app.utils.extensions import mail
 
 contact_bp = Blueprint('contact', __name__)
 
