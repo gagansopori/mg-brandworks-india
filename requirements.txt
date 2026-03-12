@@ -2,9 +2,7 @@
 Flask==3.0.2
 Flask-WTF==1.2.1
 WTForms==3.1.1
-# --- Google Cloud Storage (Private Assets & Signed URLs) ---
 google-cloud-storage==2.14.1
-# --- Content Engine ---
 Markdown==3.5.2
-# --- Network Utilities ---
 requests==2.31.0
+python-dotenv==0.21.0
