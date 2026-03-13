@@ -1,4 +1,7 @@
 import os, json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class ApplicationConfig:
     def __init__(self):
