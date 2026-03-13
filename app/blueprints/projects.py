@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from app.extensions import load_markdown
+from app.utils.extensions import load_markdown
 
 projects_bp = Blueprint('projects', __name__)
 
