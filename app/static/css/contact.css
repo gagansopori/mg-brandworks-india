@@ -84,6 +84,25 @@
 .mini-contact-grid a:hover .fa-instagram { color: #e4405f; }
 .mini-contact-grid a:hover .fa-youtube { color: #ff0000; }
 
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
 @media (max-width: 768px) {
     .contact-split-layout { flex-direction: column; gap: 40px; text-align: center; }
     .contact-form-panel { width: 100%; max-width: 500px; }

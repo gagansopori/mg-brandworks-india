@@ -1,9 +1,11 @@
+import logging
 from flask import Blueprint
 from flask import render_template
-
-from app.extensions import load_markdown
+from app.utils.extensions import load_markdown
 
 about_bp = Blueprint('about', __name__)
+
+log = logging.getLogger(__name__)
 
 @about_bp.route("/about")
 def index():
