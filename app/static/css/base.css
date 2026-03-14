@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 * { box-sizing: border-box; }
-
+:root {
+    --brand-azure: #37cae3;
+    --brand-gold: #ffcc05;
+    --brand-slate: #2c2c2e; /* The lighter slate you liked */
+    --brand-black: #000000;
+    --muted-gold: #ffd990;
+    --muted-azure: #63d0e3;
+}
 body, html {
     margin: 0; padding: 0;
     background-color: #ffffff;
@@ -9,83 +16,105 @@ body, html {
     overflow-x: hidden;
 }
 
+main { margin-top: 0; }
+
 /* NAVIGATION */
 nav {
-    background-color: #37cae3;
-    padding: 1rem 2rem;
-    position: relative;
+    background-color: transparent;
+    padding: 1.5rem 0.5rem;
+    position: absolute;
     z-index: 100;
+    top: 0; left: 0; width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    max-width: 2400px; /* Step 3: We can lower this value next to make it narrower */
     margin: 0 auto;
+    width: 99%;
 }
 
-.nav-logo img {
+.nav-left, .nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-right {
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* BRANDING */
+.brand-link { text-decoration: none; }
+
+.brand-text {
+    display: block;
+    color: var(--brand-slate);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.25rem; /* Increased size */
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.mobile-logo {
+    display: none;
     height: 50px; width: 50px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #ffcc05; /* Preserved from original */
-    display: block;
+    border: 2px solid #ffcc05;
 }
 
+/* MENU LINKS */
 .nav-links {
     display: flex;
     list-style: none;
     margin: 0; padding: 0;
-    gap: 15px;
-}
-
-.nav-links li {
-    border-radius: 2px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    gap: 2px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #5e5d5f; /* Original Slate */
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.85rem;
+    color: var(--brand-slate);
+    font-weight: 400;
+    text-transform: lowercase; /* Changed to lowercase */
+    font-size: 1.0rem;
     display: block;
     padding: 8px 10px;
-}
-
-.nav-links li:hover {
-    background-color: #ffcc05; /* Gold */
-    transform: translateY(-3px);
-}
-
-.nav-links li:hover a { color: #ffffff; }
-
-/* SHARED BUTTON BASE */
-.cta-button {
-    padding: 12px 28px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: none;
-    cursor: pointer;
     transition: all 0.3s ease;
-    width: 180px;
-    height: 40px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
+}
+
+/* SOCIALS */
+.social-links { display: flex; gap: 15px; }
+.social-icon {
     text-decoration: none;
+    color: var(--brand-slate);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+/* HOVERS */
+.nav-links a:hover,
+.social-icon:hover,
+.brand-link:hover .brand-text {
+    color: #37cae3;
+    transform: translateY(-2px);
 }
 
 /* FOOTER */
 .site-footer {
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
     background: #ffffff;
     color: #5e5d5f;
@@ -94,31 +123,33 @@ nav {
     font-size: 0.7rem;
 }
 
-/* GLOBAL MOBILE STRUCTURE */
+/* MOBILE STRUCTURE */
 @media (max-width: 768px) {
+    .brand-text { display: none; }
+    .mobile-logo { display: block; }
+    .nav-center, .social-links { display: none; }
+
     .burger-menu {
         display: flex;
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
-        z-index: 1001;
     }
     .burger-menu span {
         width: 25px; height: 3px;
-        background-color: #5e5d5f;
-        display: block;
+        background-color: #ffcc05; /* Changed to Gold to match theme */
         transition: all 0.3s ease;
     }
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 82px; left: 0; width: 100%;
-        background-color: #37cae3;
-        padding: 20px;
-        text-align: center;
+        top: 80px; left: 0; width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Dark overlay for readability */
+        padding: 40px;
     }
     .nav-links.active { display: flex; }
+
     /* Burger Animation */
     .burger-menu.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .burger-menu.active span:nth-child(2) { opacity: 0; }
