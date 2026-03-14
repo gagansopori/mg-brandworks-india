@@ -17,24 +17,35 @@
 
     <nav>
         <div class="nav-container">
-            <div class="nav-logo">
-                <a href="{{ url_for('home.index') }}">
-                    <img alt="MG Logo" src="{{ url_for('static', filename='images/mgb_logo.jpeg') }}">
+            <div class="nav-left">
+                <a href="{{ url_for('home.index') }}" class="brand-link">
+                    <span class="brand-text">MG Brandworks India</span>
+                    <img alt="MG Logo" src="{{ url_for('static', filename='images/mgb_logo.jpeg') }}" class="mobile-logo">
                 </a>
             </div>
 
-            <div class="burger-menu" id="burger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-center">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="{{ url_for('home.index') }}">Home</a></li>
+                    <li><a href="{{ url_for('about.index') }}">About</a></li>
+                    <li><a href="{{ url_for('about.index') }}">Services</a></li>
+                    <li><a href="{{ url_for('contact.index') }}">Contact</a></li>
+                </ul>
             </div>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="{{ url_for('home.index') }}">Home</a></li>
-                <li><a href="{{ url_for('about.index') }}">About</a></li>
-                <li><a href="{{ url_for('about.index') }}">Services</a></li>
-                <li><a href="{{ url_for('contact.index') }}">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="burger-menu" id="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </nav>
 
