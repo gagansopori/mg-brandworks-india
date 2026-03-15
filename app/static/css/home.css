@@ -6,92 +6,108 @@
     --brand-black: #000000;
     --muted-gold: #ffd990;
     --muted-azure: #009ab6;
+    --muted-beige: #fffbf3;
+    --white: #ffffff;
 }
 
-/* MAIN HERO CONTAINER */
-.home-hero {
-    position: relative;
+/* SECTION 1: BRAND LANDING (Full Screen, Centered) */
+.home-landing {
     width: 100%;
-    height: 100vh; /* Ensures footer is hidden initially */
+    height: 100vh;
     display: flex;
-    background-color: var(--muted-gold);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--muted-beige); /* Preserving your current bg */
+    text-align: center;
+    padding: 20px;
+}
+
+.landing-content .brand-name {
+    font-family: 'Anton', sans-serif;
+    color: var(--muted-azure);
+    font-size: 5.5rem; /* Slightly larger for the solo impact */
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1.1;
+}
+
+.landing-content .tagline {
+    color: var(--brand-slate);
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    margin-top: 30px;
+}
+
+/* SECTION 2: ABOUT/TEAM (The 50/50 Split) */
+.home-about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: var(--muted-azure); /* Differentiated from Section 1 */
     overflow: hidden;
 }
 
-/* SECTION ARCHITECTURE (50/50 SPLIT) */
 .hero-left, .hero-right {
     flex: 1;
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 100px; /* Uniform gap for navbar clearance */
-    justify-content: flex-start; /* Aligns both sections to the same top line */
-}
-
-/* LEFT CONTENT (TEXT) */
-.hero-left {
     align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+}
+.hero-left {
     padding-left: 5%; /* Aligns with your navbar's left margin */
     padding-bottom: 50px; /* Adds some breathing room at the bottom */
 }
 
-.hero-title-area {
-    margin-top: 25px;
-    text-align: center;
+.hero-right {
+    justify-content: center;
 }
 
-.hero-subtitle-area {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers children horizontally */
-    text-align: center;
-}
-
-.brand-name {
+.personnel-name {
     font-family: 'Anton', sans-serif;
-    color: var(--muted-azure); /* Applied Step 4: Azure Color */
     font-size: 4.5rem;
     font-weight: 500;
-    letter-spacing: 0.2em;
-    margin: 0;
-    line-height: 1.1;
+    color: var(--muted-gold);
+    text-transform: uppercase;
     text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 1px;
 }
 
-.tagline {
-    color: var(--brand-slate);
-    font-size: 1.6rem;
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    margin-top: 10px;
+.brand-position {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
     text-transform: lowercase;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+    margin-top: 1px;
 }
 
-/* RIGHT CONTENT (PORTRAIT) */
-.hero-right {
-    align-items: center; /* Centers the portrait box horizontally in the right half */
+
+.about-brief {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--muted-beige);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
-.portrait-box {
-    width: 80%;
-    height: 90%; /* Creates a 10% gap from top and bottom */
-    overflow: hidden;
-    background-color: #fb8500;
-}
 
-.portrait-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Prevents stretching */
-}
-
-/* BUTTONS */
+/* BUTTON RESTORATION */
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 40px;
+    margin-bottom: 40px; /* Distance from the bottom of the section */
 }
 
 .cta-button {
@@ -101,17 +117,13 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     transition: all 0.3s ease !important;
+    display: inline-block; /* Ensures padding works correctly */
 }
 
 .btn-home-white {
     background-color: #ffffff;
     color: #5e5d5f;
-}
-
-.btn-home-white:hover {
-    background-color: var(--brand-gold);
-    color: #ffffff;
-    transform: translateY(-3px);
+    border: 1px solid #e0e0e0;
 }
 
 .btn-home-azure {
@@ -119,22 +131,72 @@
     color: #ffffff;
 }
 
-.btn-home-azure:hover {
+/* HOVERS */
+.cta-button:hover {
     background-color: var(--brand-gold);
+    color: #ffffff;
     transform: translateY(-3px);
+}
+
+/* SECTION 3: APPOINTMENT/CONTACT (Centered) */
+.home-contact {
+    width: 100%;
+    height: 80vh; /* Slightly shorter than full screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--brand-slate); /* High contrast distinction */
+    color: #ffffff;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.home-contact .section-heading {
+    color: var(--brand-gold);
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+}
+
+.lorem-text {
+    max-width: 600px;
+    margin: 20px 0 40px 0;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* BUTTONS (Preserving your existing classes) */
+.btn-home-gold {
+    background-color: var(--brand-gold);
+    color: var(--brand-black);
+}
+
+.btn-home-gold:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* PORTRAIT BOX (Preserving your exact 80/90 specs) */
+.portrait-box {
+    width: 80%;
+    height: 90%;
+    overflow: hidden;
+    background-color: #fb8500;
+}
+
+.portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* RESPONSIVENESS */
 @media (max-width: 992px) {
-    .home-hero {
+    .home-about {
         flex-direction: column;
         height: auto;
     }
     .hero-left, .hero-right {
-        padding-top: 80px;
-        padding-left: 5%;
-        padding-right: 5%;
+        padding: 80px 5%;
     }
-    .brand-name { font-size: 2.5rem; }
-    .portrait-box { height: 500px; width: 100%; }
 }
