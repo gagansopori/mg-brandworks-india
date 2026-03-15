@@ -59,21 +59,23 @@ nav {
 
 .brand-text {
     display: block;
-    color: var(--brand-slate);
+    color: var(--muted-azure);
     font-weight: 500;
     text-transform: uppercase;
     font-size: 1.25rem; /* Increased size */
-    letter-spacing: 0.05em;
+    letter-spacing: 0.01em;
     transition: color 0.3s ease;
 }
 
-.mobile-logo {
+.mobile-logo, .brand-logo {
     display: none;
     height: 50px; width: 50px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #ffcc05;
 }
+
+.brand-logo { display: block; }
 
 /* MENU LINKS */
 .nav-links {
@@ -85,7 +87,7 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--brand-slate);
+    color: var(--muted-azure);
     font-weight: 400;
     text-transform: lowercase; /* Changed to lowercase */
     font-size: 1.0rem;
@@ -98,7 +100,7 @@ nav {
 .social-links { display: flex; gap: 15px; }
 .social-icon {
     text-decoration: none;
-    color: var(--brand-slate);
+    color: var(--muted-azure);
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
@@ -108,7 +110,7 @@ nav {
 .nav-links a:hover,
 .social-icon:hover,
 .brand-link:hover .brand-text {
-    color: #37cae3;
+    color: var(--brand-slate);
     transform: translateY(-2px);
 }
 
