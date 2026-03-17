@@ -1,16 +1,18 @@
 import os
+from pathlib import Path
 
 import markdown
 from flask_mail import Mail
 from flask_wtf import CSRFProtect
 
+from app.configs.app_config import settings
 
 mail = Mail()
 csrf = CSRFProtect()
 
 def load_markdown(filename):
     """Load and render markdown file to HTML"""
-    content_path = os.path.join(os.path.dirname(__file__), 'static', 'markdown', f'{filename}.md')
+    content_path = os.path.join(settings.markdown_dir, f'{filename}.md')
     try:
         with open(content_path, 'r') as f:
             md_content = f.read()
