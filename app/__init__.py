@@ -12,7 +12,7 @@ from app.utils.extensions import mail, load_markdown
 
 def create_app():
 
-    LoggerConfig.setup(log_level='INFO')
+    LoggerConfig.setup(log_level='DEBUG')
     log = LoggerConfig.get_logger(__name__)
 
     app = Flask(__name__)
