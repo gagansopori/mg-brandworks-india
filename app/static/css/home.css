@@ -8,6 +8,7 @@
     --muted-azure: #009ab6;
     --muted-beige: #fffbf3;
     --white: #ffffff;
+    --azure-beige: #cadde1;
 }
 
 /* SECTION 1: BRAND LANDING (Full Screen, Centered) */
@@ -121,14 +122,17 @@
 }
 
 .btn-home-white {
-    background-color: #ffffff;
+    background-color: var(--brand-gold);
     color: #5e5d5f;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--brand-slate);
+    border-radius: 50px;
 }
 
 .btn-home-azure {
     background-color: var(--brand-azure);
     color: #ffffff;
+    border: 1px solid var(--brand-slate);
+    border-radius: 50px;
 }
 
 /* HOVERS */
