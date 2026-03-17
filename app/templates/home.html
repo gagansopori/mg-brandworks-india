@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Home | MG&trade; Brandworks India
+Home | MG Brandworks India&trade;
 {% endblock %}
 
 {% block extra_css %}
@@ -9,19 +9,109 @@ Home | MG&trade; Brandworks India
 {% endblock %}
 
 {% block body %}
-<div class="home-hero">
-    <div class="hero-bg-container">
-        <img alt="Founder" class="hero-bg-image" src="{{ url_for('static', filename='images/founder.jpg') }}">
-        <div class="tint-overlay"></div>
-    </div>
-    <div class="hero-content">
-        <h1 class="brand-name">MG BRANDWORKS INDIA</h1>
+<!-- 1. Landing + Intro -->
+<section class="home-landing">
+    <div class="landing-content">
+        <h1 class="brand-name">MG<br>BRANDWORKS<br>INDIA&trade;</h1>
         <h3 class="tagline">let's bring your brand to life...</h3>
-
         <div class="hero-buttons">
-            <a href="{{ url_for('projects.index') }}" class="cta-button btn-home-white">Let's Go!</a>
-            <a href="{{ url_for('about.index') }}" class="cta-button btn-home-azure">Learn More</a>
+                <a href="{{ url_for('projects.index') }}" class="cta-button btn-home-white">Let's Go!</a>
+            </div>
+    </div>
+</section>
+
+<!-- 2. About the Founder + Team-->
+<section class="home-about">
+    <div class="hero-left">
+        <div class="hero-title-area">
+            <h2 class="personnel-name">Manasi Gaur</h2>
+            <h2 class="brand-position">founder, ceo, lead-designer</h2>
+        </div>
+
+        <div class="hero-subtitle-area">
+            <p class="about-brief">
+                Expertise in enterprise microservices and minimalist e-ink interface design,
+                blending technical precision with aesthetic clarity.
+            </p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('about.index') }}" class="cta-button btn-home-azure">Learn More</a>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="hero-right">
+        <div class="portrait-box">
+            <img src="{{ url_for('static', filename='images/founder.png') }}" alt="Founder" class="portrait-img">
+        </div>
+    </div>
+</section>
+
+<!-- 3. Services Overview -->
+<section class="home-services">
+    <h2 class="services-heading">Our Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3 class="service-title">Brand Strategy</h3>
+            <p class="service-description">
+                Crafting unique brand identities that resonate with your audience and drive engagement.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3 class="service-title">Visual Identity</h3>
+            <p class="service-description">
+                Designing cohesive visual elements that reflect your brand's personality and values.
+            </p>
+        </div>
+        <div class="service-card">
+            <h3 class="service-title">Digital Presence</h3>
+            <p class="service-description">
+                Building impactful online platforms that enhance your brand's visibility and reach.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Contact / Call to Action -->
+<section class="home-contact">
+    <div class="contact-content">
+        <h2 class="section-heading">Ready to Start?</h2>
+        <p class="lorem-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+            luctus nec ullamcorper mattis, pulvinar dapibus leo.
+        </p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('contact.index') }}" class="cta-button btn-home-gold">Book an Appointment</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!--<div class="home-hero">-->
+<!--    <div class="hero-left">-->
+<!--        <div class="hero-title-area">-->
+<!--            <h1 class="brand-name">MG<br>BRANDWORKS<br>INDIA&trade;</h1>-->
+<!--            <h2 class="brand-position">founder, ceo, lead-designer</h2>-->
+<!--        </div>-->
+
+<!--        <div class="hero-subtitle-area">-->
+<!--            <h3 class="tagline">let's bring your brand to life...</h3>-->
+
+<!--            <div class="hero-buttons">-->
+<!--                <a href="{{ url_for('projects.index') }}" class="cta-button btn-home-white">Let's Go!</a>-->
+<!--                <a href="{{ url_for('about.index') }}" class="cta-button btn-home-azure">Learn More</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="hero-right">-->
+<!--        <div class="portrait-box">-->
+<!--            <img src="{{ url_for('static', filename='images/founder.jpg') }}" alt="Founder" class="portrait-img">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 {% endblock %}

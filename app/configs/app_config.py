@@ -19,11 +19,15 @@ class ApplicationConfig:
     @property
     def flask_config(self):
         return {
-            'SECRET_KEY': self._data.get('SECRET_KEY', 'default-key'),
+            'SECRET_KEY': self._data.get('SECRET_KEY'),
             'MAIL_SERVER': self._data.get('MAIL_SERVER'),
-            'MAIL_PORT': int(self._data.get('MAIL_PORT', 587)),
+            'MAIL_PORT': int(self._data.get('MAIL_PORT')),
             'MAIL_USERNAME': self._data.get('MAIL_USERNAME'),
             'MAIL_PASSWORD': self._data.get('MAIL_PASSWORD'),
         }
+
+    @property
+    def markdown_dir(self):
+        return self._data.get('MARKDOWN_DIR')
 
 settings = ApplicationConfig()
