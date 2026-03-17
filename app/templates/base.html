@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="MG Brandworks India | Let's bring your brand to life." name="description">
 
-    <title>{% block title %}MG Brandworks India{% endblock %}</title>
+    <title>{% block title %}MG Brandworks India&trade;{% endblock %}</title>
 
     <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -14,31 +14,29 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-
     <nav>
         <div class="nav-container">
             <div class="nav-left">
                 <a href="{{ url_for('home.index') }}" class="brand-link">
-                    <span class="brand-text">MG Brandworks India</span>
-                    <img alt="MG Logo" src="{{ url_for('static', filename='images/mgb_logo.jpeg') }}" class="mobile-logo">
+<!--                    <span class="brand-text">MG Brandworks India&trade;</span>-->
+                    <img alt="MG Logo" src="{{ url_for('static', filename='images/mgb_logo.jpeg') }}" class="mobile-logo brand-logo">
                 </a>
             </div>
 
             <div class="nav-center">
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="{{ url_for('home.index') }}">Home</a></li>
+<!--                    <li><a href="{{ url_for('home.index') }}">Home</a></li>-->
                     <li><a href="{{ url_for('about.index') }}">About</a></li>
-                    <li><a href="{{ url_for('about.index') }}">Services</a></li>
+                    <li><a href="{{ url_for('projects.index') }}">Services</a></li>
                     <li><a href="{{ url_for('contact.index') }}">Contact</a></li>
                 </ul>
             </div>
 
             <div class="nav-right">
                 <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
                     <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
                 </div>
                 <div class="burger-menu" id="burger-menu">
                     <span></span>
